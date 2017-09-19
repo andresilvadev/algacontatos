@@ -21,8 +21,8 @@
         <div class="main">
           <div class="title">Menu</div>
           <a th:href="@{/}" class="item"><span class="icon"><i class="fa fa-home"></i></span><span class="name">Dashboard</span></a>
-          <a th:href="@{/contatos/novo}" class="item active"><span class="icon"><i class="fa fa-plus"></i></span><span class="name">Novo Contato</span></a>
-          <a th:href="@{/contatos}" class="item"><span class="icon"><i class="fa fa-th-list"></i></span><span class="name">Listar Contatos</span></a>     
+          <a th:href="@{/contatos/novo}" class="item active"><span class="icon"><i class="fa fa-plus"></i></span><span class="name">Novo</span></a>
+          <a th:href="@{/contatos}" class="item"><span class="icon"><i class="fa fa-th-list"></i></span><span class="name">Listar</span></a>     
         </div>
       </div>
     </aside>
@@ -47,10 +47,10 @@
               Dashboard
             </a>
             <a href="#" class="nav-item">
-              Novo Contato
+              Novo
             </a>
             <a href="#" class="nav-item">
-              Listar Contatos
+              Listar
             </a>            
           </div>
         </div>
@@ -80,44 +80,11 @@
             </p>
             <label class="label">Telefone</label>
             <p class="control has-icon has-icon-right">
-              <input class="input is-success" type="text" placeholder="Telefone"/>
-              <i class="fa fa-check"></i>
-              <span class="help is-success">This username is available</span>
+              <input class="input" type="text" placeholder="Telefone"/>
             </p>
             <label class="label">Email</label>
             <p class="control has-icon has-icon-right">
-              <input class="input is-danger" type="text" placeholder="Email input"/>
-              <i class="fa fa-warning"></i>
-              <span class="help is-danger">This email is invalid</span>
-            </p>
-            <label class="label">Subject</label>
-            <p class="control">
-              <span class="select">
-                <select>
-                  <option>Select dropdown</option>
-                  <option>With options</option>
-                </select>
-              </span>
-            </p>
-            <label class="label">Message</label>
-            <p class="control">
-              <textarea class="textarea" placeholder="Textarea"></textarea>
-            </p>
-            <p class="control">
-              <label class="checkbox">
-                <input type="checkbox"/>
-                Remember me
-              </label>
-            </p>
-            <p class="control">
-              <label class="radio">
-                <input type="radio" name="question"/>
-                Yes
-              </label>
-              <label class="radio">
-                <input type="radio" name="question"/>
-                No
-              </label>
+              <input class="input" type="text" placeholder="Email input"/>              
             </p>
             <p class="control">
               <button class="button is-primary"><i class="fa fa-floppy-o"></i> &nbsp; Salvar </button>
@@ -130,13 +97,12 @@
   </section>
 </div>
 </div>
+
 <footer class="footer">
   <div class="container">
     <div class="has-text-centered">
       <p>
-        <strong>Bulma</strong> by <a href="http://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC ANS 4.0</a>.
+        <strong>Spring MVC</strong> com <a href="#">Lógica de programação</a>
       </p>
       <p>
         <a class="icon" href="https://github.com/jgthms/bulma">
@@ -146,6 +112,7 @@
     </div>
   </div>
 </footer>
+
 <script type="text/javascript" th:src="@{/js/bulma.js}"></script>
 <script type="text/javascript" th:src="@{/js/jquery.js}"></script>
 </body>
