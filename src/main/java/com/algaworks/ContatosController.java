@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ContatosController {
@@ -23,8 +24,11 @@ public class ContatosController {
 	}
 	
 	@GetMapping("/contatos")
-	public String listagem() {
-		return "listar";
+	public ModelAndView listar() {		
+		ModelAndView mv = new ModelAndView("listar");
+		mv.addObject("contatos", LISTA_CONTATOS); 
+		
+		return mv;
 	}
 	
 	@GetMapping("/contatos/novo")

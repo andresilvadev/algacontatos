@@ -60,7 +60,7 @@
         <div class="hero-body">
           <div class="container">
             <h2 class="subtitle padding">
-              Dashboard
+              Listagem de contatos cadastrados
             </h2>            
           </div>
         </div>
@@ -71,7 +71,7 @@
           
         <div class="column">
           <section class="panel">
-            <p class="panel-heading">
+            <p class="panel-heading"> 
               Listagem de contatos
             </p>
             <div class="panel-block">
@@ -79,76 +79,28 @@
                 <thead>
                   <tr>
                     <th>Nome</th>
-                    <th>Telefone</th>
-                    <th></th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tfoot>
-                  <tr>
-                    <th>Nome</th>
-                    <th>Telefone</th>
-                    <th></th>
+                    <th>Telefone</th>                    
+                    <th>Twitter</th>
+                    <th>Instagram</th>
+                    <th>Ações</th>
                     <th></th>
                   </tr>
-                </tfoot>
+                </thead>               
                 <tbody>
-                  <tr>
-                    <td>Misty Abbott</td>
-                    <td>Bass Guitar</td>
+                  <tr th:each="contato: ${contatos}">
+                    <td th:text="${contato.nome}"></td>
+                    <td th:text="${contato.telefone}"></td>                    
+                    <td class="is-icon"><a href="#"><i class="fa fa-twitter"></i></a></td>
+                    <td class="is-icon"><a href="#"><i class="fa fa-instagram"></i></a></td>
                     <td class="is-icon">
-                      <a href="#">
-                        <i class="fa fa-twitter"></i>
-                      </a>
-                    </td>
-                    <td class="is-icon">
-                      <a href="#">
-                        <i class="fa fa-instagram"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>John Smith</td>
-                    <td>Rhythm Guitar</td>
-                    <td class="is-icon">
-                      <a href="#">
-                        <i class="fa fa-twitter"></i>
-                      </a>
-                    </td>
-                    <td class="is-icon">
-                      <a href="#">
-                        <i class="fa fa-instagram"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Robert Mikels</td>
-                    <td>Lead Guitar</td>
-                    <td class="is-icon">
-                      <a href="#">
-                        <i class="fa fa-twitter"></i>
-                      </a>
-                    </td>
-                    <td class="is-icon">
-                      <a href="#">
-                        <i class="fa fa-instagram"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Karyn Holmberg</td>
-                    <td>Drums</td>
-                    <td class="is-icon">
-                      <a href="#">
-                        <i class="fa fa-twitter"></i>
-                      </a>
-                    </td>
-                    <td class="is-icon">
-                      <a href="#">
-                        <i class="fa fa-instagram"></i>
-                      </a>
-                    </td>
-                  </tr>
+                    	<a class="button is-primary is-small" th:href="@{/contatos/{contato}/editar(contato=${contato.id})}">Editar</a>                    	
+                   	</td>
+                   	<td class="is-icon">
+                   		<form th:action="@{/contatos/{contato}(contato=${contato.id})}" th:method="delete">
+                   			<button class="button is-danger is-small">Excluir</button>
+                   		</form>
+                   	</td>
+                  </tr>                  
                 </tbody>
               </table>
             </div>
